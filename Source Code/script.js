@@ -1,6 +1,6 @@
 const content = document.getElementById("content");
-const apiWeatherKey = "GANTI_DENGAN_API_KEY_CUACA";
-const apiNewsKey = "e018795657ba3f83c9fdd61e0c33adac";
+const apiWeatherKey = G092;
+const apiNewsKey = e018795657ba3f83c9fdd61e0c33adac;
 
 // --- NAVIGATION ---
 document.querySelectorAll("nav a").forEach(link => {
@@ -30,17 +30,17 @@ function showHome() {
 
   document.getElementById("cekBtn").addEventListener("click", () => {
     const city = document.getElementById("city").value;
-    const url = \`https://api.openweathermap.org/data/2.5/weather?q=\${city}&appid=\${apiWeatherKey}&units=metric&lang=id\`;
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q=\${city}&appid=\${apiWeatherKey}&units=metric&lang=id';
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
         if (data.cod === 200) {
-          document.getElementById("result").innerHTML = \`
+          document.getElementById("result").innerHTML = `
             <h3>\${data.name}</h3>
             <p>Suhu: \${data.main.temp}°C</p>
             <p>Cuaca: \${data.weather[0].description}</p>
-          \`;
+          `;
         } else {
           document.getElementById("result").innerHTML = "Kota tidak ditemukan!";
         }
@@ -55,7 +55,7 @@ function showHome() {
 function showBerita() {
   content.innerHTML = `<h2>Berita Terbaru</h2><div id="news">Memuat berita...</div>`;
 
-  const url = \`http://api.mediastack.com/v1/news?access_key=\${apiNewsKey}&countries=id&limit=5\`;
+  const url = `http://api.mediastack.com/v1/news?access_key=\${apiNewsKey}&countries=id&limit=5`;
 
   fetch(url)
     .then(res => res.json())
