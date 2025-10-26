@@ -132,6 +132,19 @@ async function loadBerita() {
         return;
     }
 
+
+    //optional parameters untuk mediastack:
+    //
+    //     & sources = cnn,bbc
+    //     & categories = business,sports
+    //     & countries = us,au
+    //     & languages = en,-de
+    //     & keywords = virus,-corona
+    //     & sort = published_desc
+    //     & offset = 0
+    //     & limit = 100
+    //  Contoh `https://api.mediastack.com/v1/news?access_key=${apiNewsKey}&countries=us&limit=2`
+    //  artinya sumber berita us dan limit yang di load hanya 2
     try {
         const url = `https://api.mediastack.com/v1/news?access_key=${apiNewsKey}&limit=2`;
         const res = await fetch(url);
