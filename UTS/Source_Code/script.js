@@ -1,6 +1,6 @@
 const content = document.getElementById("content");
-const apiWeatherKey = "c3adb61bf87750fc29748e5658482325";
-const apiNewsKey = "e018795657ba3f83c9fdd61e0c33adac";
+const apiWeatherKey = "API KEY HERE";
+const apiNewsKey = "API KEY HERE";
 
 // --- CACHE HELPER ---
 function setCache(key, data) {
